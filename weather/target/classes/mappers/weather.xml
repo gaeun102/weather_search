@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ==== #29. mapper 기본설정 ==== -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.weather.dao.WeatherDAO">
+	 <select id="WeatherList" parameterType="com.example.weather.model.weatherVO" resultType="com.example.weather.model.weatherVO">
+		select * from tbl_weather_info
+     </select>
+
+
+ 	 <select id="getWeatherByCity" parameterType="String" resultType="com.example.weather.model.weatherVO">
+		SELECT 	*
+     	FROM	tbl_weather_info
+        WHERE	city = #{city}
+     </select>
+     
+     <select id="getWeatherByDay" parameterType="String" resultType="com.example.weather.model.weatherVO">
+		SELECT 	*
+     	FROM	tbl_weather_info
+        WHERE	day = #{day}
+     </select>
+
+</mapper>
